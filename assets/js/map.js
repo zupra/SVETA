@@ -6,6 +6,7 @@
 	// map
 	//var _draggable = ($(window).width() > 800) ? true : false;
 
+	var _draggable = true;
 
 	var latitude = 55.82431 //55.7348971, //55.804693,
 	longitude = 37.63453, 12 //37.5884822; //37.591822;
