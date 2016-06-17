@@ -1,0 +1,33 @@
+#nav
+	position fixed
+	left 1em
+	//top 50%
+	bottom -1em
+	width 100vh
+
+	display flex
+	//justify-content center
+	//justify-content space-between
+	justify-content space-around
+
+	transform-origin 0 0
+	transform rotate(-90deg)
+
+	a
+		//margin 0 1em
+		font bold 1em/1 sans-serif
+		color #EF3F5A //inherit
+		text-decoration none
+
+		border-bottom .4em solid transparent
+		transition: border .5s
+		&:hover
+			//border-top 1px solid #EF3F5A
+			text-decoration overline
+		&.active
+			text-decoration none
+			border-bottom-color #FFF000
+			//text-decoration underline
+			//background #FFF000
+			//border 0
+			//border-bottom .3em solid #FFF000
