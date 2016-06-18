@@ -8,9 +8,9 @@
 
 	var _draggable = true;
 
-	var latitude = 55.82431 //55.7348971, //55.804693,
-	longitude = 37.63453, 12 //37.5884822; //37.591822;
-	var map_zoom = 17; //17
+	var latitude = 55.7348971, //55.804693,
+			longitude = 37.5884822; //37.591822;
+	var map_zoom = 15; //17
 	var marker_url = './build/img/map.png';
 	var style = [{
 		"featureType": "poi",
