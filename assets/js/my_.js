@@ -2,7 +2,7 @@ var form = document.querySelector('form');
 var data = new FormData(form);
 
 var req = new XMLHttpRequest();
-request.open('POST', 'https://docs.google.com/forms/d/1Yhq6yAsFwQASV1jaWQBHtjm7Jm_ZYbN-H_aMiY0DnLM/formResponse', true);
+req.open('POST', 'https://docs.google.com/forms/d/1Yhq6yAsFwQASV1jaWQBHtjm7Jm_ZYbN-H_aMiY0DnLM/formResponse', true);
 
 req.send(data);
 
