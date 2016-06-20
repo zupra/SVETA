@@ -1,10 +1,19 @@
 var form = document.querySelector('form');
-var data = new FormData(form);
 
-var req = new XMLHttpRequest();
-req.open('POST', 'https://docs.google.com/forms/d/1a6YgeSv3xfBlIfWBOyywhCbALccyIuwgOOcKwvVYN-A/formResponse', true);
+form.addEventListener('submit', function(e) {
 
-req.send(data);
+	var data = new FormData(form);
+
+	var req = new XMLHttpRequest();
+	req.open('POST', 'https://docs.google.com/forms/d/1a6YgeSv3xfBlIfWBOyywhCbALccyIuwgOOcKwvVYN-A/formResponse', true);
+
+	req.send(data);
+
+  e.preventDefault();
+}, false);
+
+
+
 
 
 
