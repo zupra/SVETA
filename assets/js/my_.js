@@ -1,15 +1,28 @@
 var form = document.querySelector('form');
+var btn = document.querySelector('button');
 
 form.addEventListener('submit', function(e) {
+	e.preventDefault();
+
 
 	var data = new FormData(form);
-
 	var req = new XMLHttpRequest();
 	req.open('POST', 'https://docs.google.com/forms/d/1a6YgeSv3xfBlIfWBOyywhCbALccyIuwgOOcKwvVYN-A/formResponse', true);
 
+
+
 	req.send(data);
 
-  e.preventDefault();
+	btn.classList.add('success');
+	btn.innerHTML = 'Готово!';
+	form.reset();
+		setTimeout(function(){
+			btn.classList.remove('success');
+			btn.innerHTML = 'Записаться';
+
+		}, 2000);
+
+
 }, false);
 
 

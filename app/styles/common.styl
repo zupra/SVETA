@@ -4,6 +4,7 @@
 //silver
 
 @import 'nav'
+@import 'form'
 
 *
 	margin 0
@@ -80,8 +81,8 @@ body
 #faq
 	background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#FFF'/><text text-anchor='middle' x='50%' y='50%' dy='1px' fill='#EEE' font-size='5px'>Что Как</text></svg>") no-repeat center  / 50% fixed
 
-#contacts
-	background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#FFF'/><text text-anchor='middle' x='50%' y='50%' dy='1px' fill='#EEE' font-size='4px'>Контакты</text></svg>") no-repeat center  / 50% fixed
+// #contacts
+// 	background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#FFF'/><text text-anchor='middle' x='50%' y='50%' dy='1px' fill='#EEE' font-size='4px'>Контакты</text></svg>") no-repeat center  / 50% fixed
 
 .section-scroll
 	min-height 100vh
@@ -151,41 +152,38 @@ body
 
 
 #contacts
-	//text-align center
-	//background #333
-	//height 100vh
-	width 80vw
-	//margin auto
-	display flex
 
-	h1
-		width 100%
+	padding 0
+	padding-left 3em
+	//display flex
+	position relative
 
-
-
-.groups
-	text-align center
-	margin 2em 0
-	display flex
-	flex-wrap wrap
-	justify-content space-around
-	p
-		width 100%
-		//text-align center
-		margin-bottom 1em
-	b
-		background #CCC
+	form
 		border-radius 50%
-		width 3em
-		height 3em
+		text-align center
+		position absolute
+		background rgba(#FFF, .5)
+		top 1em
+		right 1em
+		padding 3em
 
+		a
+			color inherit
+			display block
+			&:hover
+				color #ef3f5a
+			svg
+				vertical-align middle
+				margin-right 5pt
 
 
 
 #Gmap
-	width 50%
+	width calc(100vw - 3em)
+	height 100vh
 	background #EEE
+	position relative
 
-#map_canvas
-	height 100%
-	width 100%
+	#map_canvas
+		height 100%
+		width 100%
