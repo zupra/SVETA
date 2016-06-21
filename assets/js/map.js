@@ -1,17 +1,11 @@
 function initMap() {
-
-
-
-
-	// map
 	//var _draggable = ($(window).width() > 800) ? true : false;
-
 	var _draggable = true;
+
 
 	var latitude = 55.7041,
 			longitude = 37.8445726;
 	var marker_url = './assets/img/map.png';
-
 
 
 	var style = [{
@@ -27,17 +21,16 @@ function initMap() {
 	}];
 
 	var map_options = {
-		//center: new google.maps.LatLng(latitude, longitude),
 		center: {lat: 55.7032172, lng: 37.8484306},
-		zoom: 17,
-		panControl: true,
-		zoomControl: true,
+		zoom: 16,
+		panControl: false,
+		zoomControl: false,
 		mapTypeControl: false,
-		streetViewControl: true,
+		streetViewControl: false,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 		scrollwheel: false,
 		draggable: _draggable, //false,
-		styles: style,
+		styles: style
 	}
 
 	//inizialize map

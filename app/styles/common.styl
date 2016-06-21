@@ -15,24 +15,25 @@
 	font-size calc(1vw + 1vh + .5vmin)
 
 body
-	font 400 100%/1.5 serif
+	font 400 100%/1.6 serif
+
 	color #5C5C5C
 	background #F6F6F6
 
+a
+	cursor pointer
+
 .well
 	//background url('../img/sveta.png') no-repeat 20% 70% antiquewhite
+
 	background antiquewhite
 	margin-left 3em
 	display flex
 	flex-wrap wrap
 	position relative
 
-
-
 	img
 		align-self center
-		//display block
-		//max-width 60%
 
 
 .intro
@@ -41,8 +42,6 @@ body
 	top 2em
 	width 40%
 
-	//text-align right
-	//max-width 60%
 	letter-spacing .3pt
 	h1
 
@@ -51,8 +50,7 @@ body
 		//font-size 6vw
 		margin-left -5em
 		margin-bottom 1em
-		//position relative
-		//left -4em
+
 		font-size 3em
 		line-height 1
 
@@ -65,7 +63,7 @@ body
 		font-size 4em
 		text-align center
 	p
-		font-family monospace
+		font-family 'Courier New', Courier, monospace
 		//padding-left 50%
 		color silver
 
@@ -74,12 +72,15 @@ body
 
 
 #prices
-	background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#fcfcfc'/><text text-anchor='middle' x='50%' y='50%' dy='3px' fill='#EEE' font-size='12px'>Цены</text></svg>") no-repeat center  / 50% fixed
+	background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#fcfcfc'/><text text-anchor='middle' x='50%' y='50%' dy='3px' fill='#F6F6F6' font-size='6px'>Цены</text></svg>") no-repeat center  / 50% fixed
 
+	font-family 'Courier New', Courier, monospace
 
 
 #faq
-	background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#FFF'/><text text-anchor='middle' x='50%' y='50%' dy='1px' fill='#EEE' font-size='5px'>Что Как</text></svg>") no-repeat center  / 50% fixed
+	//background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#FFF'/><text text-anchor='middle' x='50%' y='50%' dy='2px' fill='#F6F6F6' font-size='5px'>Что Как</text></svg>") no-repeat center  / 40% fixed
+
+	font-family 'Courier New', Courier, monospace
 
 // #contacts
 // 	background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#FFF'/><text text-anchor='middle' x='50%' y='50%' dy='1px' fill='#EEE' font-size='4px'>Контакты</text></svg>") no-repeat center  / 50% fixed
@@ -103,12 +104,20 @@ body
 	//flex-wrap wrap
 	padding 0 0 0 1em
 
+	p
+		font-size .8em
+
 	img
 		margin-right 2em
 		//display inline-block
 
 
 .price
+	//font-family 'Lucida Sans Unicode', 'Lucida Grande', sans-serif
+	//font-family Georgia, serif
+	//font-family: Tahoma, Geneva, sans-serif;
+	font-family: Helvetica, sans-serif;
+	//font-family: Courier, monospace;
 	font-size .8em
 	margin-top 6em
 	width 100%
@@ -123,6 +132,7 @@ body
 
 		p
 			color slategrey
+			white-space nowrap
 
 
 
@@ -147,6 +157,8 @@ body
 		//align-self flex-top
 	p
 		margin-bottom 1em
+		font-size .8em
+
 
 
 
@@ -155,35 +167,51 @@ body
 
 	padding 0
 	padding-left 3em
-	//display flex
-	position relative
+	display flex
+	//position relative
 
-	form
-		border-radius 50%
-		text-align center
-		position absolute
-		background rgba(#FFF, .5)
-		top 1em
-		right 1em
-		padding 3em
+form
+	//border-radius 50%
+	font-family 'Courier New', Courier, monospace
+	text-align center
+	margin auto
+	//position absolute
+	//background rgba(#FFF, .5)
+	//top 1em
+	//right 1em
+	//padding 3em
 
-		a
-			color inherit
-			display block
-			&:hover
-				color #ef3f5a
-			svg
-				vertical-align middle
-				margin-right 5pt
+	h3
+		font-weight normal
+	a
+		color #6383a8
+		display block
+		&:hover
+			color #ef3f5a
+		svg
+			vertical-align middle
+			margin-right 5pt
 
 
 
-#Gmap
-	width calc(100vw - 3em)
-	height 100vh
+
+
+#map_canvas
+	width 50%
+	height calc(100vh - 4em)
+	margin 2em 0
 	background #EEE
-	position relative
 
-	#map_canvas
-		height 100%
-		width 100%
+#zoom-in
+#zoom-out
+	height 38px
+	width 38px
+	cursor pointer
+	border-radius 50%
+	margin-left 16px
+	margin-top 16px
+	background #03a9f4 url("//s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-controller.svg") no-repeat
+#zoom-in
+	background-position 50% 2px
+#zoom-out
+	background-position: 50% -29px
