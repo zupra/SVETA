@@ -154,6 +154,9 @@ var myscroller = function(){
 		var nav = document.querySelector('#nav');
 		nav.addEventListener('click', function(event) {
 
+			//TODO
+			if (document.documentElement.clientWidth < 800 ) return;
+
 			var target = event.target;
 			if (target.tagName != 'A') return;
 			window.removeEventListener('scroll', callback);
@@ -181,12 +184,12 @@ var myscroller = function(){
 		window.addEventListener('scroll', callback);
 
 		function callback (event) {
+
+			//TODO
+			if (document.documentElement.clientWidth < 800 ) return;
+
 			event.preventDefault();
-
-
 			clearActiveLink();
-
-
 
 			slide.compare.push(document.body.scrollTop);
 			if (slide.compare.length > 2) {
@@ -194,14 +197,11 @@ var myscroller = function(){
 				(slide.compare[0] < slide.compare[1]) ? slide._scroll('Down'): slide._scroll('Up');
 			}
 
+
 		}
 
 
 };
 
 
-//window.addEventListener('resize', function() {});
-
-if ( document.documentElement.clientWidth > 800 ) {
-	myscroller();
-}
+myscroller();

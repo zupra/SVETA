@@ -3,6 +3,9 @@
 //slategrey
 //silver
 
+//$S
+$M = 800px
+
 @import 'nav'
 @import 'form'
 
@@ -12,7 +15,10 @@
 	box-sizing border-box
 
 :root
-	font-size calc(1vw + 1vh + .5vmin)
+	font-size 18px //100%
+
+	@media (min-width: $M)
+		font-size calc(1vw + 1vh + .5vmin)
 
 body
 	font 400 100%/1.6 serif
@@ -20,11 +26,13 @@ body
 	color #5C5C5C
 	background #F6F6F6
 
+
+
 a
 	cursor pointer
 
 .well
-	//background url('../img/sveta.png') no-repeat 20% 70% antiquewhite
+	//background url('/assets/img/sveta.png') no-repeat 20% 70%/ cover antiquewhite
 
 	background antiquewhite
 	margin-left 3em
@@ -43,15 +51,16 @@ a
 	width 40%
 
 	letter-spacing .3pt
+	font-family serif
 	h1
 
 
 		text-align right
-		//font-size 6vw
+		font-size 6vw
 		margin-left -5em
 		margin-bottom 1em
 
-		font-size 3em
+		//font-size 3em
 		line-height 1
 
 		color burlywood
@@ -63,7 +72,7 @@ a
 		font-size 4em
 		text-align center
 	p
-		font-family 'Courier New', Courier, monospace
+		//font-family 'Courier New', Courier, monospace
 		//padding-left 50%
 		color silver
 
@@ -71,21 +80,23 @@ a
 
 
 
-#prices
-	background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#fcfcfc'/><text text-anchor='middle' x='50%' y='50%' dy='3px' fill='#F6F6F6' font-size='6px'>Цены</text></svg>") no-repeat center  / 50% fixed
-
-	font-family 'Courier New', Courier, monospace
 
 
-#faq
-	font-family 'Courier New', Courier, monospace
+
+
+
+
 
 
 
 .section-scroll
+	font-family 'Courier New', Courier, monospace
 	min-height 100vh
 	//height 100vh
 	padding 4em
+
+	// img
+	// 	max-width 100%
 
 
 
@@ -100,14 +111,20 @@ a
 	img
 		margin-right 2em
 
+#prices
+	background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#fcfcfc'/><text text-anchor='middle' x='50%' y='50%' dy='3px' fill='#F6F6F6' font-size='6px'>Цены</text></svg>") no-repeat center  / 50% fixed
+
 .price
 	font-family: Helvetica, sans-serif;
 	font-size .8em
 	margin-top 6em
 	width 100%
+
+	//@media (min-width: $M)
 	display flex
+	flex-wrap wrap
 	justify-content space-around
-	//justify-content space-between
+
 	div
 		color lightcoral
 		text-align center
@@ -139,10 +156,14 @@ a
 	padding-left 3em
 	display flex
 
+
+
 form
-	font-family 'Courier New', Courier, monospace
 	text-align center
 	margin auto
+	// @media (min-width: $M)
+	// 	flex-wrap wrap
+	//flex 1
 
 	h3
 		font-weight normal
@@ -160,6 +181,7 @@ form
 #map
 	width 50%
 	height calc(100vh - 4em)
+	//flex 1
 	margin 2em 0
 	background #EEE
 	position relative
