@@ -162,22 +162,28 @@ form
 	height calc(100vh - 4em)
 	margin 2em 0
 	background #EEE
+	position relative
 
 #map_canvas
+	//position absolute
 	width 100%
 	height 100%
 
 
 #zoom-in
 #zoom-out
+	position absolute
+	left 16px
 	height 38px
 	width 38px
 	cursor pointer
 	border-radius 50%
-	margin-left 16px
-	margin-top 16px
+	//margin-left 16px
+	//margin-top 16px
 	background #03a9f4 url("//s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-controller.svg") no-repeat
 #zoom-in
 	background-position 50% 2px
+	top 16px
 #zoom-out
 	background-position: 50% -29px
+	top 70px
