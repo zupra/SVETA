@@ -1,7 +1,7 @@
 /**
 gulp-sourcemaps
 
-npm i gulp gulp-jade gulp-stylus autoprefixer-stylus gulp-postcss --save-dev
+npm i gulp gulp-jade gulp-stylus autoprefixer-stylus gulp-postcss gulp-uglify --save-dev
 
 список
 npm list --depth=0 -g
@@ -15,6 +15,7 @@ var gulp = require('gulp'),
 		postcss = require('gulp-postcss'),
 		autoprefixer = require('autoprefixer-stylus'),
 
+		uglify = require('gulp-uglify'),
 
 		stylus = require('gulp-stylus'),
 		//originalStylus = require('gulp-stylus').stylus,
@@ -36,6 +37,12 @@ function onError(err) {
 
 // ==  TASKS  ==
 
+
+gulp.task('compressJS', function() {
+  return gulp.src('app/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('./assets/js/'));
+});
 
 
 // JADE
@@ -123,5 +130,5 @@ gulp.task('watchTask', function() {
 
 
 // DEFAULT
-gulp.task('default', ['jadeTask', 'stylusTask', 'watchTask', 'browserSyncTask']);
+gulp.task('default', ['compressJS', 'jadeTask', 'stylusTask', 'watchTask', 'browserSyncTask']);
 //gulp.task('dev', ['jade-prettyTask', 'stylusTask', 'javascriptTask', 'browserSyncTask', 'watchTask']);
