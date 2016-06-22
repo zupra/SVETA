@@ -1,6 +1,7 @@
 function initMap() {
-	//var _draggable = ($(window).width() > 800) ? true : false;
-	var _draggable = true;
+
+	var _draggable = (document.documentElement.clientWidth > 800 ) ? true : false;
+	//var _draggable = true;
 
 
 	var latitude = 55.7041,
@@ -20,6 +21,8 @@ function initMap() {
 		}]
 	}];
 
+	 var _styles = (document.documentElement.clientWidth > 800 ) ? style : [];
+
 	var map_options = {
 		center: {lat: 55.7032172, lng: 37.8484306},
 		zoom: 16,
@@ -30,7 +33,7 @@ function initMap() {
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 		scrollwheel: false,
 		draggable: _draggable, //false,
-		styles: style
+		styles: _styles
 	}
 
 	//inizialize map
@@ -117,7 +120,7 @@ form.addEventListener('submit', function(e) {
 var myscroller = function(){
 		'use strict';
 
-		var sections = document.querySelectorAll('.section-scroll');
+		var sections = document.querySelectorAll('section');
 
 		var Slides = function(sections) {
 			this.elements = sections; //document.querySelectorAll('.section-scroll');
@@ -292,5 +295,6 @@ var myscroller = function(){
 
 };
 
-
-myscroller();
+if (document.documentElement.clientWidth > 800 ) {
+	myscroller();
+}

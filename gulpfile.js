@@ -39,7 +39,7 @@ function onError(err) {
 
 
 gulp.task('compressJS', function() {
-  return gulp.src('app/*.js')
+  return gulp.src('./app/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('./assets/js/'));
 });
@@ -125,7 +125,7 @@ gulp.task('browserSyncTask', function() {
 gulp.task('watchTask', function() {
 		gulp.watch('./app/jade/**/*.jade', ['jadeTask']);
 		gulp.watch('./app/styles/**/*.styl', ['stylusTask']);
-		//gulp.watch('./app/js/**/*.js', ['javascriptTask']);
+		gulp.watch('./app/*.js', ['compressJS']);
 });
 
 

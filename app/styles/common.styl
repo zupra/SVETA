@@ -4,7 +4,7 @@
 //silver
 
 //$S
-$M = 800px
+$M = 600px
 
 @import 'nav'
 @import 'form'
@@ -15,66 +15,99 @@ $M = 800px
 	box-sizing border-box
 
 :root
-	font-size 18px //100%
+	min-height 320px
 
+	font 400 18px/1.4em Helvetica, sans-serif;
+	color #444
 	@media (min-width: $M)
-		font-size calc(1vw + 1vh + .5vmin)
+		font-size calc(1vw + 1vh + .3vmin)
+		line-height 1.63em
+		font-family 'Courier New', Courier, monospace
+		color #5C5C5C
 
 body
-	font 400 100%/1.6 serif
 
-	color #5C5C5C
+
+
+
 	background #F6F6F6
-
-
+	margin-left 3em
 
 a
 	cursor pointer
+ul
+	list-style none
+	li
+		margin-bottom .5em
 
-.well
-	//background url('/assets/img/sveta.png') no-repeat 20% 70%/ cover antiquewhite
 
-	background antiquewhite
-	margin-left 3em
+
+//.section-scroll
+section
+	//font-size 1em
 	display flex
-	flex-wrap wrap
-	position relative
+	//flex-direction column
+	flex-direction column-reverse
+	min-height 100vh
+	//height 100vh
+	padding-right .5em
+
 
 	img
 		align-self center
+		//display block
+		//margin auto
+		max-width 100% //50%
+		margin 1em 0
 
+
+
+#well
+	padding 1em
+	//background url('/assets/img/sveta.png') no-repeat 20% 70%/ cover antiquewhite
+	background antiquewhite
+	position relative
+	img
+		//width auto
+		max-height 70vh
+		align-self flex-start
 
 .intro
-	position absolute
-	right 2.1em
-	top 2em
-	width 40%
-
 	letter-spacing .3pt
 	font-family serif
+	font-size 1.3em
+
+	@media (min-width: $M)
+
+		position absolute
+		right 2.1em
+		top 2em
+		width 40%
+
 	h1
-
-
+		position relative
 		text-align right
-		font-size 6vw
-		margin-left -5em
-		margin-bottom 1em
 
-		//font-size 3em
+		font-size 8vw //3em
 		line-height 1
-
 		color burlywood
-
 		text-transform uppercase
 
+		margin 1em 0
+		&:before
+			content 'скульптурный'
+			position absolute
+			right 0
+			top -1em
+	p
+		font-family 'Courier New', Courier, monospace
+
 	h2
+		margin-top .2em
+		line-height 1
 		color wheat
-		font-size 4em
+		font-size 3em
 		text-align center
-	p
-		//font-family 'Courier New', Courier, monospace
-		//padding-left 50%
-		color silver
 
 
 
@@ -89,84 +122,104 @@ a
 
 
 
-.section-scroll
-	font-family 'Courier New', Courier, monospace
-	min-height 100vh
-	//height 100vh
-	padding 4em
-
-	// img
-	// 	max-width 100%
-
-
-
-.s1
-	display flex
-	//flex-wrap wrap
-	padding 0 0 0 1em
-
-	p
-		font-size .8em
-
-	img
-		margin-right 2em
 
 #prices
-	background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#fcfcfc'/><text text-anchor='middle' x='50%' y='50%' dy='3px' fill='#F6F6F6' font-size='6px'>Цены</text></svg>") no-repeat center  / 50% fixed
+	background url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><circle cx='15' cy='15' r='10' fill='#fcfcfc'/><text text-anchor='middle' x='50%' y='50%' dy='3px' fill='#F6F6F6' font-size='6px'>Цены</text></svg>") no-repeat center  / contain fixed
+
+	@media (min-width: $M)
+		//max-width 80vw //1200px
+		margin auto
+		//justify-content center
+		justify-content space-around
+		flex-direction column
+
+		.prices_intro
+			font-size .9em
+			display flex
+			//flex-wrap wrap
+			align-items center
+			//align-items flex-end
+			p
+				//padding 0 2em
+				padding-left 3em
+				//flex 1
+			img
+				//align-self center
+				max-width 30%
+				//flex-shrink 2
+				//flex 2
+				//flex-grow 1
+
+		.item_price
+			color lightcoral
+			p
+				color slategrey
+
+.prices_intro
+	margin-bottom 1em
+	p
+		margin-bottom 1em
 
 .price
-	font-family: Helvetica, sans-serif;
-	font-size .8em
-	margin-top 6em
-	width 100%
+	margin 1em 0
+	//font-family: Helvetica, sans-serif;
+	//flex-basis 100%
 
-	//@media (min-width: $M)
 	display flex
 	flex-wrap wrap
 	justify-content space-around
 
-	div
-		color lightcoral
+	.item_price
 		text-align center
-		padding 0 1em
+		padding 1em 1em 0
 		p
-			color slategrey
+			line-height 1.2
 			white-space nowrap
 
 
 
 
 
-.s2
-	display flex
-	align-items flex-start
-	img
-		margin-left 1em
-		height auto
+#faq
+	@media (min-width: $M)
+
+
+		flex-direction row
+		align-items center
+
+		.faq_intro, ul
+			padding 0 2em
+		.faq_intro
+			display flex
+			flex-direction column
+
+	ul
+		width 100%
 	p
 		margin-bottom 1em
-		font-size .8em
+		//font-size .8em
 
 
 
 
 
 #contacts
-	padding 0
-	padding-left 3em
-	display flex
-
+	@media (min-width: $M)
+		flex-direction row
+		align-items center
+		#map
+			width 50%
 
 
 form
+	//font-size 1.2em
 	text-align center
 	margin auto
-	// @media (min-width: $M)
-	// 	flex-wrap wrap
-	//flex 1
+	padding 1em 0
 
 	h3
 		font-weight normal
+		margin-bottom .35em
 	a
 		color #6383a8
 		display block
@@ -179,15 +232,11 @@ form
 
 
 #map
-	width 50%
 	height calc(100vh - 4em)
-	//flex 1
-	margin 2em 0
 	background #EEE
 	position relative
 
 #map_canvas
-	//position absolute
 	width 100%
 	height 100%
 
@@ -199,8 +248,6 @@ form
 	width 38px
 	cursor pointer
 	border-radius 50%
-	//margin-left 16px
-	//margin-top 16px
 	background #03a9f4 url("//s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-controller.svg") no-repeat
 #zoom-in
 	background-position 50% 2px
