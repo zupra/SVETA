@@ -1,12 +1,12 @@
 function initMap() {
 
-	var _draggable = (document.documentElement.clientWidth > 800 ) ? true : false;
-	//var _draggable = true;
+	//var _draggable = (document.documentElement.clientWidth > 800 ) ? true : false;
+	var _draggable = true;
 
 
 	var latitude = 55.7041,
 			longitude = 37.8445726;
-	var marker_url = './assets/img/map.png';
+	//var marker_url = './assets/img/map.png';
 
 
 	var style = [{
@@ -21,11 +21,12 @@ function initMap() {
 		}]
 	}];
 
+	var _zoom = (document.documentElement.clientWidth > 800 ) ? 16 : 15;
 	 var _styles = (document.documentElement.clientWidth > 800 ) ? style : [];
 
 	var map_options = {
 		center: {lat: 55.7032172, lng: 37.8484306},
-		zoom: 16,
+		zoom: _zoom ,
 		panControl: false,
 		zoomControl: false,
 		mapTypeControl: false,
