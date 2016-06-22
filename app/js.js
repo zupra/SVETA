@@ -107,7 +107,7 @@ form.addEventListener('submit', function(e) {
 			btn.classList.remove('success');
 			btn.innerHTML = 'Записаться';
 
-		}, 2000);
+		}, 600);
 
 
 }, false);
